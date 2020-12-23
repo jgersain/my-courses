@@ -7,8 +7,42 @@
 </head>
 <body>
   <div id="app">
-    <h1>Mis Cursos 💚</h1>
-    {{ test }}
+    <h1>Mis cursos 💚</h1>
+    <hr>
+    <form>
+      <p>
+        <input type="text" placeholder="Nombre del curso">
+      </p>
+      <p>
+        <input type="number" placeholder="Horas">
+      </p>
+      <p>
+        <button>Guardar curso</button>
+      </p>
+    </form>
+    <div>
+      <section>
+        <h3>Lista de Cursos</h3>
+        <div v-if="courses.length">
+          <ol>
+            <li 
+              v-for="(course, index) in courses"
+              :key="index"
+            >
+              {{ `${course.title} (${course.hours} horas)` }}
+            </li>
+          </ol>
+          <hr>
+          <p>
+            Llevo <strong></strong> horas aprendiendo cursos
+            <b>#ThisIsTheNewShit 💚</b>
+          </p>
+        </div>
+        <p v-else class="red">
+          Aún no has realizado cursos
+        </p>
+      </section>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/index.js"></script>

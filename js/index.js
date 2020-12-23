@@ -2,7 +2,24 @@ new Vue({
   el: '#app',
   data () {
     return {
-      test: 'Hola Mundo'
+      form: {
+        title: '',
+        hours: '',
+      },
+      courses: [
+        {
+          title: 'Vue JS',
+          hours: 8
+        }
+      ],
     }
   },
+  computed: {
+
+  },
+  methods: {
+    addCourse () {
+
+    }
+  }
 })
