@@ -4,28 +4,32 @@ new Vue({
     return {
       form: {
         title: '',
-        hours: '',
+        time: '',
       },
       courses: [
         {
           title: 'Vue JS',
-          hours: 8
+          time: 8
         }
       ],
     }
   },
   computed: {
-
+    totalTime () {
+      return this.courses.reduce(function (sum, element) {
+         return sum + parseInt(element.time)
+      }, 0)
+    }
   },
   methods: {
     validate () {
-      const { title, hours } = this.form
-      if (title && hours && hours > 0) return true
+      const { title, time } = this.form
+      if (title && time && time > 0) return true
       return false
     },
     addCourse () {
       if (this.validate())
         this.courses.push(this.form)
-    }
+    },
   }
 })
