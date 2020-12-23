@@ -11,13 +11,25 @@
     <hr>
     <form>
       <p>
-        <input type="text" placeholder="Nombre del curso">
+        <input 
+          type="text" 
+          placeholder="Nombre del curso"
+          v-model="form.title"
+        >
       </p>
       <p>
-        <input type="number" placeholder="Horas">
+        <input 
+          type="number" 
+          placeholder="Horas"
+          v-model="form.hours"  
+        >
       </p>
       <p>
-        <button>Guardar curso</button>
+        <button 
+          @click.prevent="addCourse"
+        >
+            Guardar curso
+        </button>
       </p>
     </form>
     <div>
@@ -35,7 +47,7 @@
           <hr>
           <p>
             Llevo <strong></strong> horas aprendiendo cursos
-            <b>#ThisIsTheNewShit 💚</b>
+            <strong>#ThisIsTheNewShit 💚</strong>
           </p>
         </div>
         <p v-else class="red">

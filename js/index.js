@@ -18,8 +18,14 @@ new Vue({
 
   },
   methods: {
+    validate () {
+      const { title, hours } = this.form
+      if (title && hours && hours > 0) return true
+      return false
+    },
     addCourse () {
-
+      if (this.validate())
+        this.courses.push(this.form)
     }
   }
 })
